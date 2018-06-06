@@ -17,6 +17,22 @@
 
         return sIsWXAppInstalledAndSupported;
     }
+	
+	/**
+	*  去除头部的零三种方法
+	* 
+	*/
+	public static int RemoveAllZeroAtHead(String s) throws EnumConstantNotPresentException {
+        return Integer.parseInt(s);
+    }
+	
+	  public static String RemoveAllZeroAtHead1(String s) throws EnumConstantNotPresentException {
+        return s.replaceFirst("^0*", "");
+    }
+
+    public static String RemoveAllZeroAtHead2(String s) throws EnumConstantNotPresentException {
+        return s.replaceAll("^(0+)", "");
+    }
 
 
     
