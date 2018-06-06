@@ -1,3 +1,22 @@
    /**
+     *  检测微信是否安装且可用
+     * @param context
+     * @return
+     */
+    
+    public static boolean isWXAppInstalledAndSupported(Context context) {
+        IWXAPI msgApi = WXAPIFactory.createWXAPI(context, null);
+        msgApi.registerApp(ConstantUtils.WXAPPID);
+
+        boolean sIsWXAppInstalledAndSupported = msgApi.isWXAppInstalled()
+                && msgApi.isWXAppSupportAPI();
+
+        if (!sIsWXAppInstalledAndSupported) {
+            MToast.showToast("未安装微信");
+        }
+
+        return sIsWXAppInstalledAndSupported;
+    }
+
 
     
